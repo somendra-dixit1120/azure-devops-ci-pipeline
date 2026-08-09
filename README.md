@@ -1,16 +1,17 @@
-# EmployeePortal
+# EmployeePortal - Azure DevOps CI
 
-ASP.NET Core Employee Portal project.
+## 📌 Project Overview
 
-## CI Pipeline
+## 🏗️ Architecture
 
-This project uses Azure DevOps CI Pipeline to restore and build the ASP.NET Core application.
+## 🛠️ Technologies Used
 
-## Technologies
+## 🔄 CI Pipeline Flow
 
-- ASP.NET Core
-- .NET
-- GitHub
-- Azure DevOps
-- Windows Server VM
-- Azure DevOps Self-Hosted Agent
+## 💻 Self-Hosted Agent
+
+## 📄 Pipeline Configuration
+
+## 📸 Screenshots
+
+## 🎯 What I Learned
