@@ -6,6 +6,12 @@ This project demonstrates a Continuous Integration (CI) pipeline for an ASP.NET 
 
 The application code is stored in GitHub, and Azure DevOps is used to automatically restore and build the application whenever changes are pushed to the `master` branch.
 
+## 📌 Scope
+
+This project focuses only on Continuous Integration (CI).
+
+Continuous Deployment (CD) and application deployment are intentionally not included because they are outside the current learning scope.
+
 ## 🏗️ Architecture
 
 Developer → GitHub → Azure DevOps Pipeline → Self-Hosted Agent → Windows Server VM → .NET Build
