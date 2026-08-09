@@ -1,34 +1,55 @@
-# EmployeePortal - Azure DevOps CI
+# EmployeePortal - Azure DevOps CI Pipeline
 
 ## 📌 Project Overview
 
+This project demonstrates a Continuous Integration (CI) pipeline for an ASP.NET Core application.
+
+The application code is stored in GitHub, and Azure DevOps is used to automatically restore and build the application whenever changes are pushed to the `master` branch.
+
 ## 🏗️ Architecture
+
+Developer → GitHub → Azure DevOps Pipeline → Self-Hosted Agent → Windows Server VM → .NET Build
 
 ## 🛠️ Technologies Used
 
+- ASP.NET Core
+- .NET
+- Git
+- GitHub
+- Azure DevOps
+- Azure Virtual Machine
+- Windows Server
+- Azure DevOps Self-Hosted Agent
+- YAML
+
 ## 🔄 CI Pipeline Flow
 
-## 💻 Self-Hosted Agent
+1. Developer makes changes to the ASP.NET Core project.
+2. Code is pushed to the GitHub `master` branch.
+3. Azure DevOps automatically triggers the CI pipeline.
+4. The pipeline uses the self-hosted agent.
+5. The agent runs on a Windows Server VM.
+6. `dotnet restore` restores project dependencies.
+7. `dotnet build` builds the application.
+8. The pipeline reports the build result.
 
 ## 📄 Pipeline Configuration
 
-## 📸 Screenshots
+The pipeline is defined in `azure-pipelines.yml`.
 
-## 🎯 What I Learned
+```yaml
+trigger:
+- master
 
-Git/GitHub
-Azure DevOps Project
-Azure VM
-Windows Server
-Self-hosted Agent
-Agent Pool
-YAML pipeline
-trigger
-pool
-dotnet restore
-dotnet build
-CI automatic trigger
-Build logs
-Successful CI build
+pool:
+  name: Default
 
-Note: This project focuses only on Continuous Integration (CI). Continuous Deployment (CD) is intentionally not included because it is outside the current learning scope.
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- script: dotnet restore
+  displayName: 'Restore project'
+
+- script: dotnet build --configuration $(buildConfiguration) --no-restore
+  displayName: 'Build project'
