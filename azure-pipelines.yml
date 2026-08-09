@@ -1,0 +1,15 @@
+trigger:
+- master
+
+pool:
+  name: Default
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- script: dotnet restore
+  displayName: 'Restore project'
+
+- script: dotnet build --configuration $(buildConfiguration) --no-restore
+  displayName: 'Build project'
